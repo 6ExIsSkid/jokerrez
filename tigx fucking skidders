@@ -1137,25 +1137,5 @@ coroutine.wrap(MJKZQQJ_fake_script)()
 local function XXGR_fake_script() -- ScreenGui.GroupRequire 
 	local script = Instance.new('LocalScript', ScreenGui)
 
-	if game.Players.LocalPlayer:IsInGroup(8060432) then
-	
-	else
-		game.Players.LocalPlayer:Kick("\n~Tear~\nPlease make sure to join the group on ROBLOX.\n ID : 8060432\nSincerly Calipsy.")
-		script.Parent:Destroy()
-	end
-	
-	
-	
-	
-	
-	while wait(10) do
-		if game.Players.LocalPlayer:IsInGroup(8060432) then
-	
-		else
-			game.Players.LocalPlayer:Kick("\n~Tear~\nPlease make sure to join the group on ROBLOX.\n ID : 8060432\nSincerly Calipsy.")
-			script.Parent:Destroy()
-	
-		end
-	end
 end
 coroutine.wrap(XXGR_fake_script)()
