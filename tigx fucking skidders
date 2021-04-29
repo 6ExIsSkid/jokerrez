@@ -1,0 +1,1161 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local TIG = Instance.new("TextLabel")
+local Fly = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local Noclip = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local Cash = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local GodBlockAndInfiniteArmor = Instance.new("TextButton")
+local UICorner_5 = Instance.new("UICorner")
+local Discord = Instance.new("TextLabel")
+local FreeFist = Instance.new("TextButton")
+local UICorner_6 = Instance.new("UICorner")
+local AntiStomp = Instance.new("TextButton")
+local UICorner_7 = Instance.new("UICorner")
+local AntiFlashBang = Instance.new("TextButton")
+local UICorner_8 = Instance.new("UICorner")
+local AntiBag = Instance.new("TextButton")
+local UICorner_9 = Instance.new("UICorner")
+local CrashServer = Instance.new("TextButton")
+local UICorner_10 = Instance.new("UICorner")
+local Headless = Instance.new("TextButton")
+local UICorner_11 = Instance.new("UICorner")
+local Naked = Instance.new("TextButton")
+local UICorner_12 = Instance.new("UICorner")
+local FistReach = Instance.new("TextButton")
+local UICorner_13 = Instance.new("UICorner")
+local FlyGun = Instance.new("TextButton")
+local UICorner_14 = Instance.new("UICorner")
+local FlyMelee = Instance.new("TextButton")
+local UICorner_15 = Instance.new("UICorner")
+local Goto = Instance.new("TextButton")
+local UICorner_16 = Instance.new("UICorner")
+local TextBox = Instance.new("TextBox")
+local UICorner_17 = Instance.new("UICorner")
+local Target = Instance.new("TextButton")
+local UICorner_18 = Instance.new("UICorner")
+local GodAndUnban = Instance.new("TextButton")
+local UICorner_19 = Instance.new("UICorner")
+local Bag = Instance.new("TextButton")
+local UICorner_20 = Instance.new("UICorner")
+local View = Instance.new("TextButton")
+local UICorner_21 = Instance.new("UICorner")
+local Unview = Instance.new("TextButton")
+local UICorner_22 = Instance.new("UICorner")
+local Credit = Instance.new("TextLabel")
+local SwagMode = Instance.new("TextButton")
+local UICorner_23 = Instance.new("UICorner")
+local function ShrinkName()
+	TextBox.FocusLost:connect(function()
+		for i,v in pairs(game.Players:GetChildren()) do
+			if (string.sub(string.lower(v.Name),1,string.len(TextBox.Text))) == string.lower(TextBox.Text) then
+				TextBox.Text = v.Name
+			end
+		end
+	end)
+end
+
+ShrinkName()
+function findPlayer(name)
+	name = name:lower()
+	if name == 'me' then
+		return game:GetService'Players'.LocalPlayer
+	end
+	for i,v in pairs(game:GetService'Players':GetPlayers()) do
+		if v.Name:lower():find(name) == 1 then
+			return v
+		end
+	end
+end
+--Properties:
+
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Main.Name = "Main"
+Main.Parent = ScreenGui
+Main.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+Main.Position = UDim2.new(0.0735107735, 0, 0.251953125, 0)
+Main.Size = UDim2.new(0.583963692, 0, 0.56640625, 0)
+Main.Active = true
+Main.Draggable = true
+
+UICorner.Parent = Main
+
+TIG.Name = "TIG"
+TIG.Parent = Main
+TIG.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TIG.BackgroundTransparency = 1.000
+TIG.BorderColor3 = Color3.fromRGB(27, 42, 53)
+TIG.Position = UDim2.new(0.360103637, 0, 0, 0)
+TIG.Size = UDim2.new(0.279792756, 0, 0.341379315, 0)
+TIG.Font = Enum.Font.Kalam
+TIG.Text = "TIG"
+TIG.TextColor3 = Color3.fromRGB(255, 255, 255)
+TIG.TextScaled = true
+TIG.TextSize = 14.000
+TIG.TextWrapped = true
+
+Fly.Name = "Fly"
+Fly.Parent = Main
+Fly.BackgroundColor3 = Color3.fromRGB(67, 67, 67)
+Fly.Position = UDim2.new(0.0414507762, 0, 0.810344815, 0)
+Fly.Size = UDim2.new(0.15544042, 0, 0.141379312, 0)
+Fly.Font = Enum.Font.Kalam
+Fly.Text = "Fly [X]"
+Fly.TextColor3 = Color3.fromRGB(255, 255, 255)
+Fly.TextScaled = true
+Fly.TextSize = 14.000
+Fly.TextWrapped = true
+
+UICorner_2.Parent = Fly
+
+Noclip.Name = "Noclip"
+Noclip.Parent = Main
+Noclip.BackgroundColor3 = Color3.fromRGB(67, 67, 67)
+Noclip.Position = UDim2.new(0.0414507762, 0, 0.637930989, 0)
+Noclip.Size = UDim2.new(0.15544042, 0, 0.141379312, 0)
+Noclip.Font = Enum.Font.Kalam
+Noclip.Text = "Noclip [Z]"
+Noclip.TextColor3 = Color3.fromRGB(255, 255, 255)
+Noclip.TextScaled = true
+Noclip.TextSize = 14.000
+Noclip.TextWrapped = true
+
+UICorner_3.Parent = Noclip
+
+Cash.Name = "Cash"
+Cash.Parent = Main
+Cash.BackgroundColor3 = Color3.fromRGB(67, 67, 67)
+Cash.Position = UDim2.new(0.0414507762, 0, 0.465517193, 0)
+Cash.Size = UDim2.new(0.15544042, 0, 0.141379312, 0)
+Cash.Font = Enum.Font.Kalam
+Cash.Text = "Cash"
+Cash.TextColor3 = Color3.fromRGB(255, 255, 255)
+Cash.TextScaled = true
+Cash.TextSize = 14.000
+Cash.TextWrapped = true
+
+UICorner_4.Parent = Cash
+
+GodBlockAndInfiniteArmor.Name = "GodBlockAndInfiniteArmor"
+GodBlockAndInfiniteArmor.Parent = Main
+GodBlockAndInfiniteArmor.BackgroundColor3 = Color3.fromRGB(67, 67, 67)
+GodBlockAndInfiniteArmor.Position = UDim2.new(0.0414507762, 0, 0.296551675, 0)
+GodBlockAndInfiniteArmor.Size = UDim2.new(0.15544042, 0, 0.141379312, 0)
+GodBlockAndInfiniteArmor.Font = Enum.Font.Kalam
+GodBlockAndInfiniteArmor.Text = "GodBlock & InfiniteArmor"
+GodBlockAndInfiniteArmor.TextColor3 = Color3.fromRGB(255, 255, 255)
+GodBlockAndInfiniteArmor.TextScaled = true
+GodBlockAndInfiniteArmor.TextSize = 14.000
+GodBlockAndInfiniteArmor.TextWrapped = true
+
+UICorner_5.Parent = GodBlockAndInfiniteArmor
+
+Discord.Name = "Discord"
+Discord.Parent = Main
+Discord.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Discord.BackgroundTransparency = 1.000
+Discord.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Discord.Position = UDim2.new(0.0803108811, 0, 0, 0)
+Discord.Size = UDim2.new(0.238341972, 0, 0.110344827, 0)
+Discord.Font = Enum.Font.Kalam
+Discord.Text = "Discord.gg/tig"
+Discord.TextColor3 = Color3.fromRGB(255, 255, 255)
+Discord.TextScaled = true
+Discord.TextSize = 14.000
+Discord.TextWrapped = true
+
+FreeFist.Name = "FreeFist"
+FreeFist.Parent = Main
+FreeFist.BackgroundColor3 = Color3.fromRGB(67, 67, 67)
+FreeFist.Position = UDim2.new(0.230569944, 0, 0.810344815, 0)
+FreeFist.Size = UDim2.new(0.15544042, 0, 0.141379312, 0)
+FreeFist.Font = Enum.Font.Kalam
+FreeFist.Text = "FreeFist"
+FreeFist.TextColor3 = Color3.fromRGB(255, 255, 255)
+FreeFist.TextScaled = true
+FreeFist.TextSize = 14.000
+FreeFist.TextWrapped = true
+
+UICorner_6.Parent = FreeFist
+
+AntiStomp.Name = "AntiStomp"
+AntiStomp.Parent = Main
+AntiStomp.BackgroundColor3 = Color3.fromRGB(67, 67, 67)
+AntiStomp.Position = UDim2.new(0.230569944, 0, 0.637930989, 0)
+AntiStomp.Size = UDim2.new(0.15544042, 0, 0.141379312, 0)
+AntiStomp.Font = Enum.Font.Kalam
+AntiStomp.Text = "AntiStomp"
+AntiStomp.TextColor3 = Color3.fromRGB(255, 255, 255)
+AntiStomp.TextScaled = true
+AntiStomp.TextSize = 14.000
+AntiStomp.TextWrapped = true
+
+UICorner_7.Parent = AntiStomp
+
+AntiFlashBang.Name = "AntiFlashBang"
+AntiFlashBang.Parent = Main
+AntiFlashBang.BackgroundColor3 = Color3.fromRGB(67, 67, 67)
+AntiFlashBang.Position = UDim2.new(0.230569944, 0, 0.465517193, 0)
+AntiFlashBang.Size = UDim2.new(0.15544042, 0, 0.141379312, 0)
+AntiFlashBang.Font = Enum.Font.Kalam
+AntiFlashBang.Text = "AntiFlash"
+AntiFlashBang.TextColor3 = Color3.fromRGB(255, 255, 255)
+AntiFlashBang.TextScaled = true
+AntiFlashBang.TextSize = 14.000
+AntiFlashBang.TextWrapped = true
+
+UICorner_8.Parent = AntiFlashBang
+
+AntiBag.Name = "AntiBag"
+AntiBag.Parent = Main
+AntiBag.BackgroundColor3 = Color3.fromRGB(67, 67, 67)
+AntiBag.Position = UDim2.new(0.230569944, 0, 0.293103397, 0)
+AntiBag.Size = UDim2.new(0.15544042, 0, 0.141379312, 0)
+AntiBag.Font = Enum.Font.Kalam
+AntiBag.Text = "AntiBag"
+AntiBag.TextColor3 = Color3.fromRGB(255, 255, 255)
+AntiBag.TextScaled = true
+AntiBag.TextSize = 14.000
+AntiBag.TextWrapped = true
+
+UICorner_9.Parent = AntiBag
+
+CrashServer.Name = "CrashServer"
+CrashServer.Parent = Main
+CrashServer.BackgroundColor3 = Color3.fromRGB(67, 67, 67)
+CrashServer.Position = UDim2.new(0.0414507762, 0, 0.110344775, 0)
+CrashServer.Size = UDim2.new(0.318652838, 0, 0.141379312, 0)
+CrashServer.Font = Enum.Font.Kalam
+CrashServer.Text = "Swag Mode Crash Server v1.1"
+CrashServer.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrashServer.TextScaled = true
+CrashServer.TextSize = 14.000
+CrashServer.TextWrapped = true
+
+UICorner_10.Parent = CrashServer
+
+Headless.Name = "Headless"
+Headless.Parent = Main
+Headless.BackgroundColor3 = Color3.fromRGB(67, 67, 67)
+Headless.Position = UDim2.new(0.422279775, 0, 0.810344815, 0)
+Headless.Size = UDim2.new(0.15544042, 0, 0.141379312, 0)
+Headless.Font = Enum.Font.Kalam
+Headless.Text = "Headless"
+Headless.TextColor3 = Color3.fromRGB(255, 255, 255)
+Headless.TextScaled = true
+Headless.TextSize = 14.000
+Headless.TextWrapped = true
+
+UICorner_11.Parent = Headless
+
+Naked.Name = "Naked"
+Naked.Parent = Main
+Naked.BackgroundColor3 = Color3.fromRGB(67, 67, 67)
+Naked.Position = UDim2.new(0.422279775, 0, 0.637930989, 0)
+Naked.Size = UDim2.new(0.15544042, 0, 0.141379312, 0)
+Naked.Font = Enum.Font.Kalam
+Naked.Text = "Naked"
+Naked.TextColor3 = Color3.fromRGB(255, 255, 255)
+Naked.TextScaled = true
+Naked.TextSize = 14.000
+Naked.TextWrapped = true
+
+UICorner_12.Parent = Naked
+
+FistReach.Name = "FistReach"
+FistReach.Parent = Main
+FistReach.BackgroundColor3 = Color3.fromRGB(67, 67, 67)
+FistReach.Position = UDim2.new(0.422279775, 0, 0.465517193, 0)
+FistReach.Size = UDim2.new(0.15544042, 0, 0.141379312, 0)
+FistReach.Font = Enum.Font.Kalam
+FistReach.Text = "FistReach"
+FistReach.TextColor3 = Color3.fromRGB(255, 255, 255)
+FistReach.TextScaled = true
+FistReach.TextSize = 14.000
+FistReach.TextWrapped = true
+
+UICorner_13.Parent = FistReach
+
+FlyGun.Name = "FlyGun"
+FlyGun.Parent = Main
+FlyGun.BackgroundColor3 = Color3.fromRGB(67, 67, 67)
+FlyGun.Position = UDim2.new(0.422279775, 0, 0.293103397, 0)
+FlyGun.Size = UDim2.new(0.15544042, 0, 0.141379312, 0)
+FlyGun.Font = Enum.Font.Kalam
+FlyGun.Text = "FlyGun"
+FlyGun.TextColor3 = Color3.fromRGB(255, 255, 255)
+FlyGun.TextScaled = true
+FlyGun.TextSize = 14.000
+FlyGun.TextWrapped = true
+
+UICorner_14.Parent = FlyGun
+
+FlyMelee.Name = "FlyMelee"
+FlyMelee.Parent = Main
+FlyMelee.BackgroundColor3 = Color3.fromRGB(67, 67, 67)
+FlyMelee.Position = UDim2.new(0.606217563, 0, 0.293103397, 0)
+FlyMelee.Size = UDim2.new(0.15544042, 0, 0.141379312, 0)
+FlyMelee.Font = Enum.Font.Kalam
+FlyMelee.Text = "FlyMelee"
+FlyMelee.TextColor3 = Color3.fromRGB(255, 255, 255)
+FlyMelee.TextScaled = true
+FlyMelee.TextSize = 14.000
+FlyMelee.TextWrapped = true
+
+UICorner_15.Parent = FlyMelee
+
+Goto.Name = "Goto"
+Goto.Parent = Main
+Goto.BackgroundColor3 = Color3.fromRGB(67, 67, 67)
+Goto.Position = UDim2.new(0.606217563, 0, 0.465517193, 0)
+Goto.Size = UDim2.new(0.15544042, 0, 0.141379312, 0)
+Goto.Font = Enum.Font.Kalam
+Goto.Text = "Goto"
+Goto.TextColor3 = Color3.fromRGB(255, 255, 255)
+Goto.TextScaled = true
+Goto.TextSize = 14.000
+Goto.TextWrapped = true
+
+UICorner_16.Parent = Goto
+
+TextBox.Parent = Main
+TextBox.BackgroundColor3 = Color3.fromRGB(67, 67, 67)
+TextBox.Position = UDim2.new(0.606217623, 0, 0.844827592, 0)
+TextBox.Size = UDim2.new(0.360103637, 0, 0.106896549, 0)
+TextBox.Font = Enum.Font.Kalam
+TextBox.Text = "Username"
+TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.TextScaled = true
+TextBox.TextSize = 14.000
+TextBox.TextWrapped = true
+
+UICorner_17.Parent = TextBox
+
+Target.Name = "Target"
+Target.Parent = Main
+Target.BackgroundColor3 = Color3.fromRGB(67, 67, 67)
+Target.Position = UDim2.new(0.606217563, 0, 0.637930989, 0)
+Target.Size = UDim2.new(0.15544042, 0, 0.141379312, 0)
+Target.Font = Enum.Font.Kalam
+Target.Text = "Target"
+Target.TextColor3 = Color3.fromRGB(255, 255, 255)
+Target.TextScaled = true
+Target.TextSize = 14.000
+Target.TextWrapped = true
+
+UICorner_18.Parent = Target
+
+GodAndUnban.Name = "GodAndUnban"
+GodAndUnban.Parent = Main
+GodAndUnban.BackgroundColor3 = Color3.fromRGB(67, 67, 67)
+GodAndUnban.Position = UDim2.new(0.792746067, 0, 0.293103397, 0)
+GodAndUnban.Size = UDim2.new(0.15544042, 0, 0.141379312, 0)
+GodAndUnban.Font = Enum.Font.Kalam
+GodAndUnban.Text = "GodMode + Unban"
+GodAndUnban.TextColor3 = Color3.fromRGB(255, 255, 255)
+GodAndUnban.TextScaled = true
+GodAndUnban.TextSize = 14.000
+GodAndUnban.TextWrapped = true
+
+UICorner_19.Parent = GodAndUnban
+
+Bag.Name = "Bag"
+Bag.Parent = Main
+Bag.BackgroundColor3 = Color3.fromRGB(67, 67, 67)
+Bag.Position = UDim2.new(0.790155411, 0, 0.465517193, 0)
+Bag.Size = UDim2.new(0.15544042, 0, 0.141379312, 0)
+Bag.Font = Enum.Font.Kalam
+Bag.Text = "Bag"
+Bag.TextColor3 = Color3.fromRGB(255, 255, 255)
+Bag.TextScaled = true
+Bag.TextSize = 14.000
+Bag.TextWrapped = true
+
+UICorner_20.Parent = Bag
+
+View.Name = "View"
+View.Parent = Main
+View.BackgroundColor3 = Color3.fromRGB(67, 67, 67)
+View.Position = UDim2.new(0.790155411, 0, 0.637931049, 0)
+View.Size = UDim2.new(0.15544042, 0, 0.0758620724, 0)
+View.Font = Enum.Font.Kalam
+View.Text = "View"
+View.TextColor3 = Color3.fromRGB(255, 255, 255)
+View.TextScaled = true
+View.TextSize = 14.000
+View.TextWrapped = true
+
+UICorner_21.Parent = View
+
+Unview.Name = "Unview"
+Unview.Parent = Main
+Unview.BackgroundColor3 = Color3.fromRGB(67, 67, 67)
+Unview.Position = UDim2.new(0.790155411, 0, 0.734482765, 0)
+Unview.Size = UDim2.new(0.15544042, 0, 0.0758620724, 0)
+Unview.Font = Enum.Font.Kalam
+Unview.Text = "Unview"
+Unview.TextColor3 = Color3.fromRGB(255, 255, 255)
+Unview.TextScaled = true
+Unview.TextSize = 14.000
+Unview.TextWrapped = true
+
+UICorner_22.Parent = Unview
+
+Credit.Name = "Credit"
+Credit.Parent = Main
+Credit.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Credit.BackgroundTransparency = 1.000
+Credit.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Credit.Position = UDim2.new(0.639896393, 0, 0.0068965517, 0)
+Credit.Size = UDim2.new(0.305699468, 0, 0.141379312, 0)
+Credit.Font = Enum.Font.Kalam
+Credit.Text = "Credit to Kristina#111 & yahyeee#7643"
+Credit.TextColor3 = Color3.fromRGB(255, 255, 255)
+Credit.TextScaled = true
+Credit.TextSize = 14.000
+Credit.TextWrapped = true
+
+SwagMode.Name = "SwagMode"
+SwagMode.Parent = Main
+SwagMode.BackgroundColor3 = Color3.fromRGB(67, 67, 67)
+SwagMode.Position = UDim2.new(0.639896393, 0, 0.155172363, 0)
+SwagMode.Size = UDim2.new(0.305699468, 0, 0.117241383, 0)
+SwagMode.Font = Enum.Font.Kalam
+SwagMode.Text = "Swag Mode"
+SwagMode.TextColor3 = Color3.fromRGB(255, 255, 255)
+SwagMode.TextScaled = true
+SwagMode.TextSize = 14.000
+SwagMode.TextWrapped = true
+
+UICorner_23.Parent = SwagMode
+
+-- Scripts:
+
+local function XPKLXG_fake_script() -- Fly.Fly 
+	local script = Instance.new('LocalScript', Fly)
+
+	local h = script.Parent
+	
+	h.MouseButton1Click:Connect(function()
+		--// Fly X \\--
+		wait(0) local A_1 = "[TIG] Fly Enabled to true." local A_2 = "All" local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest Event:FireServer(A_1, A_2) 
+		game.StarterGui:SetCore("SendNotification", {
+			Title = "DISCORD.GG/TIG";
+			Text = "Fly enabled. Press X to fly"
+		})
+		local plr = game.Players.LocalPlayer
+		local mouse = plr:GetMouse()
+	
+		localplayer = plr
+	
+		if workspace:FindFirstChild("Core") then
+			workspace.Core:Destroy()
+		end
+	
+		local Core = Instance.new("Part")
+		Core.Name = "Core"
+		Core.Size = Vector3.new(0.05, 0.05, 0.05)
+	
+		spawn(function()
+			Core.Parent = workspace
+			local Weld = Instance.new("Weld", Core)
+			Weld.Part0 = Core
+			Weld.Part1 = localplayer.Character.LowerTorso
+			Weld.C0 = CFrame.new(0, 0, 0)
+		end)
+	
+		workspace:WaitForChild("Core")
+	
+		local torso = workspace.Core
+		flying = true
+		local speed=10
+		local keys={a=false,d=false,w=false,s=false}
+		local e1
+		local e2
+		local function start()
+			local pos = Instance.new("BodyPosition",torso)
+			local gyro = Instance.new("BodyGyro",torso)
+			pos.Name="EPIXPOS"
+			pos.maxForce = Vector3.new(math.huge, math.huge, math.huge)
+			pos.position = torso.Position
+			gyro.maxTorque = Vector3.new(9e9, 9e9, 9e9)
+			gyro.cframe = torso.CFrame
+			repeat
+				wait()
+				localplayer.Character.Humanoid.PlatformStand=true
+				local new=gyro.cframe - gyro.cframe.p + pos.position
+				if not keys.w and not keys.s and not keys.a and not keys.d then
+					speed=20
+				end
+				if keys.w then
+					new = new + workspace.CurrentCamera.CoordinateFrame.lookVector * speed
+					speed=speed+0
+				end
+				if keys.s then
+					new = new - workspace.CurrentCamera.CoordinateFrame.lookVector * speed
+					speed=speed+0
+				end
+				if keys.d then
+					new = new * CFrame.new(speed,0,0)
+					speed=speed+0
+				end
+				if keys.a then
+					new = new * CFrame.new(-speed,0,0)
+					speed=speed+0
+				end
+				if speed>20 then
+					speed=20
+				end
+				pos.position=new.p
+				if keys.w then
+					gyro.cframe = workspace.CurrentCamera.CoordinateFrame*CFrame.Angles(-math.rad(speed*0),0,0)
+				elseif keys.s then
+					gyro.cframe = workspace.CurrentCamera.CoordinateFrame*CFrame.Angles(math.rad(speed*0),0,0)
+				else
+					gyro.cframe = workspace.CurrentCamera.CoordinateFrame
+				end
+			until flying == false
+			if gyro then gyro:Destroy() end
+			if pos then pos:Destroy() end
+			flying=false
+			localplayer.Character.Humanoid.PlatformStand=false
+			speed=20
+		end
+		e1=mouse.KeyDown:connect(function(key)
+			if not torso or not torso.Parent then flying=false e1:disconnect() e2:disconnect() return end
+			if key=="w" then
+				keys.w=true
+			elseif key=="s" then
+				keys.s=true
+			elseif key=="a" then
+				keys.a=true
+			elseif key=="d" then
+				keys.d=true
+			elseif key=="x" then
+				if flying==true then
+					flying=false
+				else
+					flying=true
+					start()
+				end
+			end
+		end)
+		e2=mouse.KeyUp:connect(function(key)
+			if key=="w" then
+				keys.w=false
+			elseif key=="s" then
+				keys.s=false
+			elseif key=="a" then
+				keys.a=false
+			elseif key=="d" then
+				keys.d=false
+			end
+		end)
+		start()
+	end)
+end
+coroutine.wrap(XPKLXG_fake_script)()
+local function NEABMZL_fake_script() -- Noclip.Noclip 
+	local script = Instance.new('LocalScript', Noclip)
+
+	local h = script.Parent
+	
+	h.MouseButton1Click:Connect(function()
+		--// NOCLIP \\--
+		wait(0) local A_1 = "[TIG] Noclip Switched To True." local A_2 = "All" local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest Event:FireServer(A_1, A_2) 
+		game.StarterGui:SetCore("SendNotification", {
+			Title = "DISCORD.GG/TIG";
+			Text = "Noclip Switched to true press z to enable it"
+		})
+		noclip = false
+		game:GetService('RunService').Stepped:connect(function()
+			if noclip then
+				game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+			end
+		end)
+		plr = game.Players.LocalPlayer
+		mouse = plr:GetMouse()
+		mouse.KeyDown:connect(function(key)
+	
+			if key == "z" then
+				noclip = not noclip
+				game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+			end
+		end)
+		print('Loaded')
+		print('Press "z" to noclip')
+	end)
+end
+coroutine.wrap(NEABMZL_fake_script)()
+local function CKXE_fake_script() -- Cash.Cash 
+	local script = Instance.new('LocalScript', Cash)
+
+	local h = script.Parent
+	
+	h.MouseButton1Click:Connect(function()
+		--// CASH \\--
+		local TargetPlr = TextBox.Text;
+		local A_1 = "[TIG] " .. TargetPlr .. " Has $" .. game.Players[TargetPlr].DataFolder.Currency.Value .. "." local A_2 = "All" local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest Event:FireServer(A_1, A_2)
+	end)
+end
+coroutine.wrap(CKXE_fake_script)()
+local function ABGNX_fake_script() -- GodBlockAndInfiniteArmor.GodBlockAndInfiniteArmor 
+	local script = Instance.new('LocalScript', GodBlockAndInfiniteArmor)
+
+	local h = script.Parent
+	
+	h.MouseButton1Click:Connect(function()
+		--// GODBLOCK AND INFINITE ARMOR \\--
+		wait(0) local A_1 = "[TIG] Bulletproof Switched To True." local A_2 = "All" local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest Event:FireServer(A_1, A_2) 
+	
+		game.StarterGui:SetCore("SendNotification", {
+			Title = "DISCORD.GG/TIG";
+			Text = "God Bullet enabled. bullets wont damage u anymore!"
+		})
+		local ps = game:GetService("Players")
+		local lp = ps.LocalPlayer
+		local char = lp.Character
+	
+		char.BodyEffects.Armor:Destroy()
+		char.BodyEffects.Defense:Destroy()
+	
+		local Clone1 = Instance.new("IntValue")
+		Clone1.Name = "Armor"
+		Clone1.Parent = char.BodyEffects
+	
+		local Clone2 = Instance.new("NumberValue")
+		Clone2.Name = "Defense"
+		Clone2.Parent = char.BodyEffects
+	end)
+	
+end
+coroutine.wrap(ABGNX_fake_script)()
+local function SGQDG_fake_script() -- Main.Keybind 
+	local script = Instance.new('LocalScript', Main)
+
+	--//Variables\\--
+	_G.Open = false;
+	local a = false;
+	local b = script.Parent;
+	--//Script\\--
+	
+	game:GetService("UserInputService").InputBegan:Connect(function(c)
+		if c.KeyCode == Enum.KeyCode.V then
+			if _G.Open == false and a == false then
+				print("wsbfw")
+				_G.Open = true;
+				a = true;
+				b:TweenSize(UDim2.new(0.584, 0,0.566, 0),Enum.EasingDirection.Out,Enum.EasingStyle.Elastic,0)
+				wait(0)
+				a = false
+			elseif _G.Open == true and a == false then
+				print("hihowereyou")
+				a = true;
+				_G.Open = false;
+				b:TweenSize(UDim2.new(0.001, 0,0.001, 0),Enum.EasingDirection.Out,Enum.EasingStyle.Quint,0)
+				wait(0)
+				a = false
+	
+	
+	
+	
+	
+	
+			end
+		end
+	end)
+end
+coroutine.wrap(SGQDG_fake_script)()
+local function PIGU_fake_script() -- FreeFist.FreeFist 
+	local script = Instance.new('LocalScript', FreeFist)
+
+	local h = script.Parent
+	
+	h.MouseButton1Click:Connect(function()
+		--// FREE FIST \\--
+		wait(0) local A_1 = "[TIG] FreeFists Switched To True." local A_2 = "All" local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest Event:FireServer(A_1, A_2) 
+		game.StarterGui:SetCore("SendNotification", {
+			Title = "DISCORD.GG/TIG";
+			Text = "FreeFists Enabled"
+		})
+	
+		local Players = game:GetService("Players")
+		local RunService = game:GetService("RunService")
+	
+		local LocalPlayer = Players.LocalPlayer
+		local Mouse = LocalPlayer:GetMouse()
+	
+		local Character = LocalPlayer.Character
+		local RightHand = Character.RightHand
+		local Character = LocalPlayer.Character
+		local LeftHand = Character.LeftHand
+	
+		wait(3)
+	
+		local Box = Instance.new("SelectionBox")
+		Box.LineThickness = 0.15
+		Box.Color3 = Color3.new(0, 1, 0.0313725)
+		Box.Adornee = RightHand
+		Box.Parent = RightHand
+	
+		LeftHand.LeftWrist:Destroy() 
+	
+		local Box = Instance.new("SelectionBox")
+		Box.LineThickness = 0.15
+		Box.Color3 = Color3.new(0.215686, 1, 0)
+		Box.Adornee = LeftHand
+		Box.Parent = LeftHand
+	
+		RightHand.RightWrist:Destroy() 
+	
+		while true do 
+			pcall(function()
+				RightHand.Position = Mouse.Hit.p
+				RightHand.Rotation = Vector3.new(0,0,0)
+				RightHand.Massless = true
+				LeftHand.Position = Mouse.Hit.p
+				LeftHand.Rotation = Vector3.new(0,0,0)
+				LeftHand.Massless = true
+			end)
+			pcall(function()
+				local Tool = Character:FindFirstChildOfClass("Tool")
+				Tool.Handle.Position = RightHand.Position
+				Tool.Handle.Position = LeftHand.Position
+			end)
+			RunService.RenderStepped:Wait()
+		end
+	end)
+end
+coroutine.wrap(PIGU_fake_script)()
+local function CGDH_fake_script() -- AntiStomp.AntiStomp 
+	local script = Instance.new('LocalScript', AntiStomp)
+
+	local h = script.Parent
+	
+	h.MouseButton1Click:Connect(function()
+		--// ANTI STOMP \\--
+		wait(0) local A_1 = "[TIX X] Anti-Stomp Enabled" local A_2 = "All" local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest Event:FireServer(A_1, A_2) 
+	
+		game.StarterGui:SetCore("SendNotification", {
+			Title = "DISCORD.GG/TIG";
+			Text = "Anti stomp enabled."
+		})
+		pcall(function() if tostring(game.PlaceId) == "2788229376" then local corepackages = game:GetService"CorePackages" local localplayer = game:GetService"Players".LocalPlayer local run = game:GetService"RunService" run:BindToRenderStep("rrrrrrrrrrr",2000,function() pcall(function() if localplayer.Character.Humanoid.Health <= 30 then localplayer.Character.Humanoid:UnequipTools() localplayer.Character.Humanoid:Destroy() workspace.CurrentCamera.CameraSubject = localplayer.Character wait() local prt = Instance.new("Model", corepackages); Instance.new("Part", prt).Name="Torso"; Instance.new("Part", prt).Name="Head"; Instance.new("Humanoid", prt).Name="Humanoid"; localplayer.Character=prt end end) pcall(function() if localplayer.Character.Humanoid.FloorMaterial == "Plastic" then ReplicatedStorage:FireServer("Stomp") end end) end) 
+			end end)
+	end)print("Hello world!")
+	
+end
+coroutine.wrap(CGDH_fake_script)()
+local function JVIGM_fake_script() -- AntiFlashBang.AntiFlashBang 
+	local script = Instance.new('LocalScript', AntiFlashBang)
+
+	local h =script.Parent
+	
+	h.MouseButton1Down:connect(function()
+		--// ANTI FLASH \\--
+		wait(0) local A_1 = "[TIG] Anti-Flashbang Enabled" local A_2 = "All" local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest Event:FireServer(A_1, A_2) 
+		game.StarterGui:SetCore("SendNotification", {
+			Title = "DISCORD.GG/TIG";
+			Text = "AntiFlash Enabled"
+		})
+	
+		while true do
+			local XD = game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui
+	
+			if XD:FindFirstChild("whiteScreen") then
+				XD.whiteScreen:Destroy()
+			end
+			wait(0.2)
+		end										
+	end)
+end
+coroutine.wrap(JVIGM_fake_script)()
+local function HIHDZHQ_fake_script() -- AntiBag.AntiBag 
+	local script = Instance.new('LocalScript', AntiBag)
+
+	local h = script.Parent
+	
+	h.MouseButton1Down:connect(function()
+		--// ANTI BAG \\--
+		wait(0) local A_1 = "[TIG] Anti-Bag Enabled" local A_2 = "All" local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest Event:FireServer(A_1, A_2) 
+		local LocalPlayer = game:GetService("Players").LocalPlayer
+		local char = LocalPlayer.Character
+		char.ChildAdded:Connect(function(sock)
+			if sock:IsA("MeshPart") then do
+					wait(0)
+					sock:Destroy()
+				end
+			end
+		end)
+	end)
+end
+coroutine.wrap(HIHDZHQ_fake_script)()
+local function KVQTIWO_fake_script() -- CrashServer.CrashServer 
+	local script = Instance.new('LocalScript', CrashServer)
+
+	local h = script.Parent
+	
+	h.MouseButton1Click:Connect(function()
+		--// CRASH SERVER \\--
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/lerkermer/lua-projects/master/SuperCustomServerCrasher'))()
+	end)
+end
+coroutine.wrap(KVQTIWO_fake_script)()
+local function KBTZ_fake_script() -- Headless.Headless 
+	local script = Instance.new('LocalScript', Headless)
+
+	local h = script.Parent
+	
+	h.MouseButton1Down:connect(function()
+		--// HEADLESS \\--
+		game.StarterGui:SetCore("SendNotification", {
+			Title = "DISCORD.GG/TIG";
+			Text = "Headles Enabled. no one can see ur face, name or ur head."
+		})
+	
+		pcall(function()
+			game.Players.LocalPlayer.Character.Head.Neck:Destroy()
+			game.Players.LocalPlayer.Character.UpperTorso.NeckAttachment:Destroy()
+			game.Players.LocalPlayer.Character.Humanoid.HealthDisplayDistance = math.huge
+			game.Players.LocalPlayer.Character.Humanoid.NameDisplayDistance = math.huge
+			game.Players.LocalPlayer.Character.Head.Size = Vector3.new(0,0,0)
+			game.Players.LocalPlayer.Character.Head.Massless = true
+			game.Players.LocalPlayer.Character.Head.CanCollide = false
+	
+			heazd = true
+	
+			while heazd == true do 
+				pcall(function()  
+					game.Players.LocalPlayer.Character.Head.NeckRigAttachment.CFrame =  CFrame.new(0, 100000.4736328125, 0)
+					game.Players.LocalPlayer.Character.UpperTorso.NeckRigAttachment.CFrame =  CFrame.new(0, 100000.4736328125, 0)
+					game.Players.LocalPlayer.Character.Head.CFrame = CFrame.new(0, 100000.4736328125, 0)
+				end)
+				wait()
+			end
+		end)
+	end)
+	
+end
+coroutine.wrap(KBTZ_fake_script)()
+local function IJSMJ_fake_script() -- Naked.Naked 
+	local script = Instance.new('LocalScript', Naked)
+
+	local h = script.Parent
+	
+	h.MouseButton1Down:connect(function()
+		--// NAKED \\--
+		local notifSound = Instance.new("Sound",workspace)
+		notifSound.PlaybackSpeed = 1.5
+		notifSound.Volume = 0.15
+		notifSound.SoundId = "rbxassetid://170765130"
+		notifSound.PlayOnRemove = true
+		notifSound:Destroy()
+		game.StarterGui:SetCore("SendNotification", {Title = "DISCORD.GG/TIG", Text = "Removing ur clothes ;))", Icon = "rbxassetid://505845268", Duration = 5, Button1 = "Okay"})
+		while wait() do
+			pcall(function()
+				if game.Players.LocalPlayer.Character:FindFirstChild("Shirt") then
+					game.Players.LocalPlayer.Character.Shirt:Destroy()
+				elseif game.Players.LocalPlayer.Character:FindFirstChild("Pants") then
+					game.Players.LocalPlayer.Character.Pants:Destroy()
+				end
+			end)
+		end
+	end)
+end
+coroutine.wrap(IJSMJ_fake_script)()
+local function BSTUG_fake_script() -- FistReach.FistReach 
+	local script = Instance.new('LocalScript', FistReach)
+
+	local h = script.Parent
+	
+	h.MouseButton1Down:connect(function()
+		--// FIST REACH \\--
+		game.StarterGui:SetCore("SendNotification", {
+			Title = "DISCORD.GG/TIG";
+			Text = "Melee Reach Enabled."
+		})
+		LP = game.Players.LocalPlayer 
+	
+		for i,v in ipairs(LP.Character:GetDescendants()) do 
+	
+			if v:IsA("MeshPart") then v.Massless = true 
+	
+				v.CanCollide = false 
+	
+				v.CustomPhysicalProperties = PhysicalProperties.new(0, 0, 0, 0, 0) 
+	
+	
+			end 
+	
+		end 
+	
+	
+		for i,v in ipairs(game.workspace:GetDescendants()) do 
+	
+			if v:IsA("Seat") then 
+	
+				v.Disabled = true 
+	
+			end 
+	
+		end 
+	
+		x = 45
+	
+		y = 45 
+	
+		z = 45
+	
+	
+	
+		penis = Vector3.new(x,y,z) 
+	
+	
+		LP.Character.RightHand.Size = penis 
+	
+	
+		local selectionBox = Instance.new("SelectionBox",LP.Character.RightHand) 
+	
+		selectionBox.Adornee = LP.Character.RightHand 
+		selectionBox = Enum.Material.Neon
+		selectionBox.Color3 = Color3.new(1, 1, 1)  
+	
+		LP.Character.LeftHand.Size = penis 
+	
+		LP.Character.BodyEffects.SpecialParts.LeftHand.Size = penis 
+	
+	
+	
+		local selectionBox = Instance.new("SelectionBox",LP.Character.LeftHand) 
+	
+		selectionBox.Adornee = LP.Character.LeftHand 
+		selectionBox = Enum.Material.Neon
+		selectionBox.Color3 = Color3.new(1, 1, 1) 
+	
+	end)
+end
+coroutine.wrap(BSTUG_fake_script)()
+local function UEVBTSK_fake_script() -- FlyGun.FlyGun 
+	local script = Instance.new('LocalScript', FlyGun)
+
+	local h = script.Parent
+	
+	h.MouseButton1Down:connect(function()
+		--// FLY GUN \\--
+		wait(0) local A_1 = "[TIG] Airstrike Switched To True." local A_2 = "All" local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest Event:FireServer(A_1, A_2) 
+		game.StarterGui:SetCore("SendNotification", {
+			Title = "DISCORD.GG/TIG";
+			Text = "Hold your Gun and click again"
+		})
+		for i,v in pairs(game:GetService'Players'.LocalPlayer.Character:GetChildren())do                 if v:isA("Tool") then                     local a = Instance.new("SelectionBox",v.Handle)                     a.Adornee = v.Handle                         v.GripPos = Vector3.new(10,-10,10)                     lplayer.Character.Humanoid:UnequipTools()                 end end
+	end)
+end
+coroutine.wrap(UEVBTSK_fake_script)()
+local function TQKPMB_fake_script() -- FlyMelee.FlyMelee 
+	local script = Instance.new('LocalScript', FlyMelee)
+
+	local h = script.Parent
+	
+	h.MouseButton1Down:connect(function()
+		--// FLY MELEE \\--
+		wait(0) local A_1 = "[TIG] Fly Melee Weapons Enabled." local A_2 = "All" local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest Event:FireServer(A_1, A_2) 
+		game.StarterGui:SetCore("SendNotification", {
+			Title = "DISCORD.GG/TIG";
+			Text = "Hold your melee and click again"
+		})
+		for i,v in pairs(game:GetService'Players'.LocalPlayer.Character:GetChildren())do                 if v:isA("Tool") then                     local a = Instance.new("SelectionBox",v.Handle)                     a.Adornee = v.Handle                         v.GripPos = Vector3.new(15,15,15)                     lplayer.Character.Humanoid:UnequipTools()                 end end
+	end)
+end
+coroutine.wrap(TQKPMB_fake_script)()
+local function CAAEV_fake_script() -- Goto.Goto 
+	local script = Instance.new('LocalScript', Goto)
+
+	local h = script.Parent
+	
+	h.MouseButton1Click:connect(function()
+		--// GOTO \\--
+		local TargetPlr = TextBox.Text;
+		local A_1 = "[TIG] Teleporting To " .. TargetPlr .. "." local A_2 = "All" local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest Event:FireServer(A_1, A_2)
+		wait(.30)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[TargetPlr].Character.HumanoidRootPart.CFrame
+	end)
+end
+coroutine.wrap(CAAEV_fake_script)()
+local function QHPIMTK_fake_script() -- Target.Target 
+	local script = Instance.new('LocalScript', Target)
+
+	local h = script.Parent
+	
+	h.MouseButton1Click:connect(function()
+		--// TARGET \\--
+		local localPlayer     = game:GetService("Players").LocalPlayer;
+		local localCharacter  = localPlayer.Character;
+		local TargetPlr       = TextBox.Text;
+		wait(0) local A_1 = "[TIG] " .. TargetPlr .. "Has Been Locked." local A_2 = "All" local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest Event:FireServer(A_1, A_2)
+	
+	
+		if TargetPlr and game.Players[TargetPlr].Character.BodyEffects['K.O'].Value == false then
+			pcall(function()
+	
+				game.Players.LocalPlayer.Character.LeftHand.Size = Vector3.new(1,1,1)
+				localCharacter.LeftHand.LeftWrist:Destroy();
+				localCharacter.RightHand.RightWrist:Destroy();
+				game.Players.LocalPlayer.Character.RightHand.Size = Vector3.new(1,1,1)
+	
+			end);
+			repeat
+				wait();
+				localCharacter.LeftHand.CFrame = game.Players[TargetPlr].Character.LowerTorso.CFrame;
+				localCharacter.RightHand.CFrame = game.Players[TargetPlr].Character.LowerTorso.CFrame;
+			until game.Players[TargetPlr].Character.BodyEffects['K.O'].Value == true
+			wait(0) local A_1 = "[TIG] " .. TargetPlr .. " Has Been Successfully Eliminated!" local A_2 = "All" local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest Event:FireServer(A_1, A_2)
+			game.StarterGui:SetCore("SendNotification", {
+				Title = "DISCORD.GG/TIG";
+				Text = "[TIG] " .. TargetPlr .. " Has been successfully knocked!";
+				Duration = 15;
+			})
+		elseif game.Players[TargetPlr].Character.BodyEffects['K.O'].Value == true then
+			wait(0) local A_1 = "[TIG] " .. TargetPlr .. " Is Already Eliminated." local A_2 = "All" local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest Event:FireServer(A_1, A_2)
+			game.StarterGui:SetCore("SendNotification", {
+				Title = "DISCORD.GG/TIG";
+				Text = "[TIG] " .. TargetPlr .. " Is already knocked.";
+				Duration = 15;
+			})
+		end;
+	end);
+end
+coroutine.wrap(QHPIMTK_fake_script)()
+local function QWSO_fake_script() -- GodAndUnban.GodAndUnban 
+	local script = Instance.new('LocalScript', GodAndUnban)
+
+	local h = script.Parent
+	
+	h.MouseButton1Down:connect(function()
+		--// GODMODE AND UNBAN \\--
+		wait(0) local A_1 = "[TIG] Godmode and Unban Enabled." local A_2 = "All" local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest Event:FireServer(A_1, A_2) 
+		local notifSound = Instance.new("Sound",workspace)
+		notifSound.PlaybackSpeed = 1.5
+		notifSound.Volume = 0.15
+		notifSound.SoundId = "rbxassetid://170765130"
+		notifSound.PlayOnRemove = true
+		notifSound:Destroy()
+		game.StarterGui:SetCore("SendNotification", {Title = "DISCORD.GG/TIG", Text = "God Mode Enabled | Unban Enabled [Guns Only With God Mode]", Icon = "rbxassetid://505845268", Duration = 5, Button1 = "Okay"})
+		local name = game.Players.LocalPlayer.Name
+		game.Players.LocalPlayer.Character.Humanoid.Health = 0
+		game.Players.LocalPlayer.Character:ClearAllChildren()
+		local lol =    game.Workspace:WaitForChild(name)
+		local money = Instance.new("Folder",game.Players.LocalPlayer.Character);money.Name = "FULLY_LOADED_CHAR"
+		lol.Parent = game.Workspace.Players
+		game.Players.LocalPlayer.Character:WaitForChild("BodyEffects")
+		game.Players.LocalPlayer.Character.BodyEffects.BreakingParts:Destroy()
+	end)
+end
+coroutine.wrap(QWSO_fake_script)()
+local function JEXOKTI_fake_script() -- Bag.Bag 
+	local script = Instance.new('LocalScript', Bag)
+
+	local h = script.Parent
+	
+	h.MouseButton1Click:connect(function()
+		--// BAG \\--
+		local TargetPlr = TextBox.Text
+		function getRoot(char)
+			local rootPart = char:FindFirstChild('HumanoidRootPart') or char:FindFirstChild('Torso') or char:FindFirstChild('UpperTorso')
+			return rootPart
+		end
+	
+		if TargetPlr and game.Players[TargetPlr].Character.BodyEffects['K.O'].Value == false then
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Ignored.Shop['[BrownBag] - $25'].Head.CFrame
+			wait(.30)
+			fireclickdetector(game.Workspace.Ignored.Shop['[BrownBag] - $25'].ClickDetector)
+			game.Players.LocalPlayer.Backpack:WaitForChild("[BrownBag]").Parent = game.Players.LocalPlayer.Character
+	
+			local A_1 = "[TIG] Attempting To Bag " .. TargetPlr .. "." local A_2 = "All" local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest Event:FireServer(A_1, A_2)
+			wait(.5)
+			repeat
+				pcall(function()
+					wait()
+					getRoot(game.Players[TargetPlr].Character).CFrame = getRoot(game.Players.LocalPlayer.Character).CFrame + Vector3.new(1,3,0)
+					game.Players.LocalPlayer.Character["[BrownBag]"]:Activate()
+				end)
+			until game.Players[TargetPlr].Character:FindFirstChild("Christmas_Sock")
+			local A_1 = "[TIG] Successfully Bagged " .. TargetPlr .. "." local A_2 = "All" local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest Event:FireServer(A_1, A_2)
+		elseif game.Players[TargetPlr].Character.BodyEffects['K.O'].Value == false then
+			local A_1 = "[TIG] " .. TargetPlr .. " Is Already Bagged." local A_2 = "All" local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest Event:FireServer(A_1, A_2)
+		end
+	end)
+end
+coroutine.wrap(JEXOKTI_fake_script)()
+local function FFHC_fake_script() -- View.View 
+	local script = Instance.new('LocalScript', View)
+
+	local h = script.Parent
+	
+	h.MouseButton1Click:Connect(function()
+		--// VIEW PLAYER \\--
+		local TargetPlr = TextBox.Text;
+		game.Workspace.Camera.CameraSubject = game.Players[TargetPlr].Character.Humanoid;
+		local A_1 = "[TIG] Spectating " .. TargetPlr .. "." local A_2 = "All" local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest Event:FireServer(A_1, A_2)
+	end)
+end
+coroutine.wrap(FFHC_fake_script)()
+local function BRCU_fake_script() -- Unview.Unview 
+	local script = Instance.new('LocalScript', Unview)
+
+	local h = script.Parent
+	
+	h.MouseButton1Click:Connect(function()
+		--// UNVIEW PLAYER \\--
+		local TargetPlr = TextBox.Text;
+		local A_1 = "[TIG] Stopped Spectating " .. TargetPlr .. "." local A_2 = "All" local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest Event:FireServer(A_1, A_2)
+		game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
+	end)
+	
+end
+coroutine.wrap(BRCU_fake_script)()
+local function MJKZQQJ_fake_script() -- SwagMode.SwagMode 
+	local script = Instance.new('LocalScript', SwagMode)
+
+	local h = script.Parent
+	
+	h.MouseButton1Click:Connect(function()
+		--// SWAG MODE \\--
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/lerkermer/lua-projects/master/SwagModeV002'))()
+	end)
+end
+coroutine.wrap(MJKZQQJ_fake_script)()
+local function XXGR_fake_script() -- ScreenGui.GroupRequire 
+	local script = Instance.new('LocalScript', ScreenGui)
+
+	if game.Players.LocalPlayer:IsInGroup(8060432) then
+	
+	else
+		game.Players.LocalPlayer:Kick("\n~Tear~\nPlease make sure to join the group on ROBLOX.\n ID : 8060432\nSincerly Calipsy.")
+		script.Parent:Destroy()
+	end
+	
+	
+	
+	
+	
+	while wait(10) do
+		if game.Players.LocalPlayer:IsInGroup(8060432) then
+	
+		else
+			game.Players.LocalPlayer:Kick("\n~Tear~\nPlease make sure to join the group on ROBLOX.\n ID : 8060432\nSincerly Calipsy.")
+			script.Parent:Destroy()
+	
+		end
+	end
+end
+coroutine.wrap(XXGR_fake_script)()
