@@ -154,5 +154,41 @@ Uis.InputEnded:Connect(function(Key)
     end
 end)
 
+RService.RenderStepped:Connect(function()
+    if getgenv().FirstPerson == true and getgenv().ThirdPerson == false then 
+        if (Camera.Focus.p - Camera.CoordinateFrame.p).Magnitude <= 1 then 
+            CanNotify = true 
+        else 
+            CanNotify = false 
+        end
+    elseif getgenv().ThirdPerson == true and getgenv().FirstPerson == false then 
+        if (Camera.Focus.p - Camera.CoordinateFrame.p).Magnitude > 1 then 
+            CanNotify = true 
+        else 
+            CanNotify = false 
+        end
+    end
+    if Aimlock == true and MousePressed == true then 
+        if AimlockTarget and AimlockTarget.Character and AimlockTarget.Character:FindFirstChild(getgenv().AimPart) then 
+            if getgenv().FirstPerson == true then
+                if CanNotify == true then
+                    if getgenv().PredictMovement == true then 
+                        Camera.CFrame = CF(Camera.CFrame.p, AimlockTarget.Character[getgenv().AimPart].Position + AimlockTarget.Character[getgenv().AimPart].Velocity/PredictionVelocity)
+                    elseif getgenv().PredictMovement == false then 
+                        Camera.CFrame = CF(Camera.CFrame.p, AimlockTarget.Character[getgenv().AimPart].Position)
+                    end
+                end
+            elseif getgenv().ThirdPerson == true then 
+                if CanNotify == true then
+                    if getgenv().PredictMovement == true then 
+                        Camera.CFrame = CF(Camera.CFrame.p, AimlockTarget.Character[getgenv().AimPart].Position + AimlockTarget.Character[getgenv().AimPart].Velocity/PredictionVelocity)
+                    elseif getgenv().PredictMovement == false then 
+                        Camera.CFrame = CF(Camera.CFrame.p, AimlockTarget.Character[getgenv().AimPart].Position)
+                    end
+                end 
+            end
+        end
+    end
+end)
 
 SeparateNotify("Ciazware", "Universal Aimbot loaded in: "..string.format("%.7f", tostring(tick() - CiazwareUniversalAimbotLoadingTime)), "", 3)
